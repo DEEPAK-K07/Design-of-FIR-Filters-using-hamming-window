@@ -64,48 +64,49 @@ title('Phase Response');
 
 ```c
 
+clc;
 clear;
 close;
 
-// Filter specifications
-M = 50;            // Filter order
-fc = 0.2;          // Normalized cutoff frequency (0 to 0.5)
+// High Pass FIR Filter using Hamming Window
+N = 51;              // Filter length
+fc = 0.3;            // Normalized cutoff frequency (fc = Fcutoff / (Fs/2))
+n = 0:N-1;
+alpha = (N-1)/2;
 
-// Sample points
-n = 0:M;
+// Hamming window
+w = 0.54 - 0.46*cos(2*%pi*n/(N-1));
 
-// Ideal impulse response of High Pass Filter
-hd = zeros(1, M+1);
-for i = 1:M+1
-    if i == (M/2 + 1) then
+// Ideal High Pass Filter Impulse Response
+hd = zeros(1, N);
+for i = 1:N
+    if (i-1) == alpha then
         hd(i) = 1 - 2*fc;
     else
-        hd(i) = (-sin(2*%pi*fc*(i - (M/2 + 1)))) / (%pi*(i - (M/2 + 1)));
+        hd(i) = -sin(2*%pi*fc*(i-1-alpha)) / (%pi*(i-1-alpha));
     end
 end
 
-// Hamming window
-w = 0.54 - 0.46 * cos(2*%pi*n/M);
-
-// Apply window
+// Multiply by window
 h = hd .* w;
-
-// Plot Impulse Response
-figure(1);
-plot(n, h);
-xlabel("n");
-ylabel("h(n)");
-title("Impulse Response of High Pass FIR Filter using Hamming Window");
-xgrid();
 
 // Frequency Response
 [H, f] = frmag(h, 512);
-figure(2);
-plot(f, H);
-xlabel("Normalized Frequency");
-ylabel("|H(f)|");
-title("Magnitude Response of High Pass FIR Filter using Hamming Window");
-xgrid();
+
+// Plot
+figure;
+subplot(2,1,1);
+plot(f, 20*log10(abs(H)));
+xlabel('Normalized Frequency');
+ylabel('Magnitude (dB)');
+title('HIGH PASS FIR FILTER (Hamming Window)');
+
+subplot(2,1,2);
+plot(f, atan(imag(H), real(H)));
+xlabel('Normalized Frequency');
+ylabel('Phase (radians)');
+title('Phase Response');
+
 
 ```
 
