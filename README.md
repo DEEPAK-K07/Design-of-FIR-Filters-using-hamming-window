@@ -12,7 +12,7 @@
 
 # PROGRAM:
 
-//LPF
+__LOW-PASS FIR FILTER__
 
 ```c
 clc;
@@ -60,7 +60,7 @@ title('Phase Response');
 
 ```
 
-//HPF
+__HIGH-PASS FIR FILTER__
 
 ```c
 
