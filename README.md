@@ -1,10 +1,10 @@
 # Design-of-FIR-Filters-using-hamming-window
 
-# DESIGN OF LOW PASS FIR DIGITAL FILTER 
+# DESIGN OF LOW PASS AND HIGH PASS FIR DIGITAL FILTER 
 
 # AIM: 
           
-  To generate design of high pass FIR digital filter using SCILAB 
+  To generate design of low pass and high pass FIR digital filter using SCILAB 
 
 # APPARATUS REQUIRED: 
 
@@ -60,12 +60,12 @@ xgrid();
 
 # OUTPUT:
 
-<img width="812" height="398" alt="4" src="https://github.com/user-attachments/assets/202a89b7-8890-4b0b-93db-d04227cb1fbb" />
+<img width="823" height="416" alt="4L" src="https://github.com/user-attachments/assets/46ab012b-f6c5-4089-87d1-68fede1bb792" />
 
 
-<img width="815" height="405" alt="41" src="https://github.com/user-attachments/assets/c8d343d1-1708-434f-995d-fa8af1c713b5" />
+<img width="818" height="409" alt="4H" src="https://github.com/user-attachments/assets/23f2a72f-b54a-437d-96c3-69bbf3b8986b" />
 
 
 # RESULT:
 
-The High-Pass FIR filter was successfully designed and plotted using the Hamming window in Scilab.
+The Low-Pass and High-Pass FIR filter was successfully designed and plotted using the Hamming window in Scilab.
