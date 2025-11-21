@@ -112,8 +112,12 @@ title('Phase Response');
 
 # OUTPUT:
 
+__LOW-PASS FIR FILTER__
+
 <img width="823" height="416" alt="4L" src="https://github.com/user-attachments/assets/46ab012b-f6c5-4089-87d1-68fede1bb792" />
 
+
+__HIGH-PASS FIR FILTER__
 
 <img width="818" height="409" alt="4H" src="https://github.com/user-attachments/assets/23f2a72f-b54a-437d-96c3-69bbf3b8986b" />
 
